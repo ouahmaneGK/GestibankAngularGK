@@ -1,0 +1,50 @@
+
+<header>
+  <h1>Liste des utilisateurs </h1>
+</header>
+    
+<table>
+  <tr  >
+    <th>
+      Nom de l'utilisateur :
+    </th>
+    <th>
+      Adresse mail :
+    </th>
+    <th>
+      Opérations :
+    </th>
+    <th>
+      Afficher :
+    </th>
+    <th>
+      Modifier :
+    </th>
+    <th>
+      Supprimer :
+    </th>  
+  </tr>
+  <tr *ngFor="let userItem of userItems" >
+    <td >
+      {{userItem.username}}
+    </td>
+    <td >
+      {{userItem.email}}
+    </td>
+    <td>
+      <a routerLink="/users/op/{{userItem.id}}">Operations <i class="material-icons">euro_symbol</i> </a>
+    </td>
+    <td>
+      <i class="material-icons"><a routerLink="/users/{{userItem.id}}" >view_list</a></i>
+        <!-- <button type="submit" (click)=" affichUser(userItem.id)"><a routerLink="/users/{{userItem.id}}" >view_list</a></button> -->
+    </td>
+    <td>
+        <i class="material-icons"><a routerLink="/users/edit/{{userItem.id}}" >edit</a></i>
+    </td>
+    <td>
+        <button style="background-color: #F44336" class="btn waves-effect waves-light" type="submit" name="action" (click)="supBtn(userItem.id)"><i class="material-icons">delete</i></button>
+    </td>
+  </tr>
+</table>
+
+<router-outlet></router-outlet>

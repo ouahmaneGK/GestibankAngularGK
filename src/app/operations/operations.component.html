@@ -1,0 +1,22 @@
+
+<table>
+
+    <tr>
+      <th>
+        Montant des opérations :
+      </th> 
+    </tr>
+
+    <tr *ngFor="let o of operationscli">
+      <td>
+          {{o.montant}} €
+      </td>
+    </tr>
+
+    <td>
+      <h4>Solde du compte :</h4>
+        {{solde}} €
+    </td>
+
+</table>
+

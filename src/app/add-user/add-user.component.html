@@ -1,0 +1,33 @@
+<h1>Formulaire d'inscription </h1>
+<h3> {{message}}  </h3>
+<p>
+  Inscrivez-vous !
+</p>
+
+<form (ngSubmit)="register()"  #myform="ngForm">
+
+  <div>
+    <input type="hidden" name="id" [(ngModel)]="user.id">
+  </div>
+  <div>
+    <label>Nom d'utilisateur</label><input name="username" [(ngModel)]="user.username">
+  </div>
+  <div>
+    <label>Adresse</label><input name="adress" [(ngModel)]="user.adress">
+  </div>
+  <div>
+    <label>Adresse mail</label><input type="email" name="email" [(ngModel)]="user.email">
+  </div>
+  <div>
+    <label>Mot de passe </label><input type="text" name="password" [(ngModel)]="user.password">
+  </div>
+
+  <button type="submit" >S'inscrire</button>
+
+</form>
+
+<ul>
+    <li  *ngFor="let item of items">
+      {{item.username|json}}
+    </li>
+</ul>
